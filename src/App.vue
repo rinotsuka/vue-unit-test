@@ -1,17 +1,23 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div><input v-model="zip" name="zip" type="text" placeholder="郵便番号"></div>
+    <ZipCode :zip="zip"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import ZipCode from './components/ZipCode.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    ZipCode,
+  },
+  data() {
+    return {
+      zip: '',
+    };
   },
 };
 </script>
